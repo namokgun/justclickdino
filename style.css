@@ -20,12 +20,5 @@ body{
     height: auto;
     -webkit-user-select: none;
     user-select: none;
-
     -webkit-touch-callout: none;
-
-    -webkit-user-drag: none;
-
-    touch-action: manipulation;
-
-    cursor: pointer
 }

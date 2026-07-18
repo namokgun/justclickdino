@@ -1,18 +1,5 @@
 const dino = document.getElementById("dino");
 
-dino.addEventListener("pointerdown", () => {
-    dino.src = "dino2.png";
-});
-
-function restoreImage() {
-    dino.src = "dino1.png";
-}
-
-dino.addEventListener("pointerup", restoreImage);
-dino.addEventListener("pointercancel", restoreImage);
-dino.addEventListener("pointerleave", restoreImage);
-
-
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 let popBuffer;
@@ -23,16 +10,6 @@ async function loadSound() {
     popBuffer = await audioContext.decodeAudioData(arrayBuffer);
 }
 
-function playSound() {
-    if (!popBuffer) return;
-
-    const source = audioContext.createBufferSource();
-    source.buffer = popBuffer;
-
-    source.connect(audioContext.destination);
-    source.start(0);
-}
-
 loadSound();
 
 document.addEventListener("pointerdown", () => {
@@ -40,3 +17,28 @@ document.addEventListener("pointerdown", () => {
         audioContext.resume();
     }
 }, { once: true });
+
+function playSound() {
+    if (!popBuffer) return;
+
+    const source = audioContext.createBufferSource();
+    source.buffer = popBuffer;
+    source.connect(audioContext.destination);
+    source.start(0);
+}
+
+// 누를 때
+function press() {
+    dino.src = "dino2.png";
+    playSound();
+}
+
+// 뗄 때
+function release() {
+    dino.src = "dino1.png";
+}
+
+dino.addEventListener("pointerdown", press);
+dino.addEventListener("pointerup", release);
+dino.addEventListener("pointerleave", release);
+dino.addEventListener("pointercancel", release);

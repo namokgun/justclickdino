@@ -42,3 +42,7 @@ dino.addEventListener("pointerdown", press);
 dino.addEventListener("pointerup", release);
 dino.addEventListener("pointerleave", release);
 dino.addEventListener("pointercancel", release);
+
+document.addEventListener("touchmove", function (e) {
+    e.preventDefault();
+}, { passive: false });

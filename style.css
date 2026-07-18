@@ -5,6 +5,7 @@
 }
 
 body{
+    margin: 0;
     width:100vw;
     height:100vh;
     display:flex;
@@ -12,13 +13,25 @@ body{
     align-items:center;
     background:rgb(255, 255, 255);
     overflow:hidden;
+    position: fixed;
+    touch-action: manipulation;
 }
 #dino {
     width: 60vw;
     max-width: 300px;
     min-width: 180px;
     height: auto;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
     -webkit-user-select: none;
+    -webkit-user-drag: none;
     user-select: none;
     -webkit-touch-callout: none;
+}
+#dino:focus {
+    outline: none;
+}
+
+#dino:active {
+    outline: none;
 }

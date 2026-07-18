@@ -43,6 +43,6 @@ dino.addEventListener("pointerup", release);
 dino.addEventListener("pointerleave", release);
 dino.addEventListener("pointercancel", release);
 
-document.addEventListener("touchmove", function (e) {
-    e.preventDefault();
-}, { passive: false });
+// 드래그 및 우클릭 방지
+dino.addEventListener("dragstart", e => e.preventDefault());
+dino.addEventListener("contextmenu", e => e.preventDefault());

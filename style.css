@@ -3,40 +3,44 @@
     padding:0;
     box-sizing:border-box;
 }
-html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+
+html, body {
+    width:100%;
+    height:100%;
+    overflow:hidden;
 }
+
 body{
-    margin: 0;
-    width:100vw;
-    height:100vh;
+    margin:0;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:rgb(255, 255, 255);
-    overflow:hidden;
-    position: fixed;
-    touch-action: manipulation;
+    background:#fff;
+
+    touch-action:manipulation;
 }
 
-#dino {
-    width: 60vw;
-    max-width: 300px;
-    min-width: 180px;
-    height: auto;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-}
-#dino:focus {
-    outline: none;
+#dino{
+    width:60vw;
+    max-width:300px;
+    min-width:180px;
+    height:auto;
+
+    display:block;
+
+    user-select:none;
+    -webkit-user-select:none;
+    -webkit-user-drag:none;
+    -webkit-touch-callout:none;
+    -webkit-tap-highlight-color:transparent;
+
+    outline:none;
+    border:none;
 }
 
-#dino:active {
-    outline: none;
+#dino:focus,
+#dino:focus-visible,
+#dino:active{
+    outline:none;
+    border:none;
 }

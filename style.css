@@ -2,25 +2,31 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+
+    -webkit-user-select:none;
+    user-select:none;
+    -webkit-touch-callout:none;
 }
 
-html, body {
+html,
+body{
     width:100%;
     height:100%;
     overflow:hidden;
+    background:#fff;
 }
 
 body{
-    margin:0;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#fff;
 
-    touch-action:manipulation;
+    overscroll-behavior:none;
+    touch-action:none;
 }
 
 #dino{
+
     width:60vw;
     max-width:300px;
     min-width:180px;
@@ -28,14 +34,19 @@ body{
 
     display:block;
 
-    user-select:none;
-    -webkit-user-select:none;
+    cursor:pointer;
+
     -webkit-user-drag:none;
+    -webkit-user-select:none;
+    user-select:none;
+
     -webkit-touch-callout:none;
     -webkit-tap-highlight-color:transparent;
 
     outline:none;
     border:none;
+
+    touch-action:none;
 }
 
 #dino:focus,
